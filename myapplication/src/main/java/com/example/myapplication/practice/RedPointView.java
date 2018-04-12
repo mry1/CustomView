@@ -1,8 +1,11 @@
-package com.example.customview;
+package com.example.myapplication.practice;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
@@ -15,6 +18,10 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.myapplication.R;
+
+import java.util.concurrent.locks.Lock;
 
 /**
  * Created by louis on 18-1-12.
@@ -75,7 +82,7 @@ public class RedPointView extends FrameLayout {
     //    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void dispatchDraw(Canvas canvas) {
-//        int layer = canvas.saveLayer(0, 0, getWidth(), getHeight(), mPaint, Canvas.ALL_SAVE_FLAG);
+        //        int layer = canvas.saveLayer(0, 0, getWidth(), getHeight(), mPaint, Canvas.ALL_SAVE_FLAG);
         if (mTouch) {
             calPath();
             if (mRadius >= RADIUS_LIMITS) {
@@ -90,7 +97,8 @@ public class RedPointView extends FrameLayout {
             mTipTextView.setY(mStartPoint.y - mTipTextView.getHeight() / 2);
         }
 
-//        canvas.restore();
+
+        //        canvas.restore();
         super.dispatchDraw(canvas);
 
     }

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.myapplication.activity.MainActivity">
+
+    <data class=".CustomDataBinding">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.example.myapplication.practice.User" />
+
+        <variable
+            name="handler"
+            type="com.example.myapplication.practice.MyHandler" />
+
+        <variable
+            name="task"
+            type="com.example.myapplication.practice.MyTask" />
+
+        <variable
+            name="main"
+            type="com.example.myapplication.activity.MainActivity" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.firstName}" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.phone}"
+            android:visibility="@{user.isShowPhone?View.VISIBLE:View.GONE}" />
+
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.getFullName(user.firstName, user.lastName)}" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::showTost}"
+            android:text="ShowToast" />
+
+
+        <com.example.myapplication.practice.RedPointView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> handler.onEventListenerExecute(task)}"
+            android:text="RunTask" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{main::onClick}"
+            android:text="动态修改firstName" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{main::onClick2}"
+            android:text="跳转" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{main::onClick3}"
+            android:text="Messenger" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{main::onClick4}"
+            android:text="Messenger" />
+        <!--<EditText-->
+        <!--android:id="@+id/btn_clear"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/drawable_layer_list"-->
+        <!--android:gravity="center"-->
+        <!--android:text="reset" />-->
+
+    </LinearLayout>
+
+</layout>

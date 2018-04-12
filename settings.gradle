@@ -1,1 +1,1 @@
-include ':customview', ':zoomimageview'
+include ':customview', ':zoomimageview', ':myapplication'

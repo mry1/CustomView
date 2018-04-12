@@ -1,4 +1,4 @@
-package com.example.customview;
+package com.example.customview3;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

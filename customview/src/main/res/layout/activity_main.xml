@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.customview.MainActivity">
+    tools:context="com.example.customview3.MainActivity">
 
     <Button
         android:id="@+id/btn_clear"
@@ -14,7 +14,7 @@
         android:text="reset"
         android:visibility="gone" />
 
-    <com.example.customview.CustomView
+    <com.example.customview3.CustomView
         android:id="@+id/frame_animation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,7 +25,7 @@
         <!--android:layout_height="match_parent"-->
         <!--android:src="@drawable/screenshot1" />-->
 
-    <com.example.customview.RedPointView
+    <com.example.customview3.RedPointView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />

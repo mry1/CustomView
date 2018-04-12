@@ -1,4 +1,4 @@
-package com.example.customview;
+package com.example.customview3;
 
 import android.content.Context;
 import android.graphics.Bitmap;
